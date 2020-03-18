@@ -14,7 +14,6 @@ import com.example.sample.R;
 
 import java.util.List;
 
-
 /**
  * Created by Administrator on 2016/6/7.
  */
@@ -28,7 +27,7 @@ public class MyListViewAdapter extends BaseAdapter {
         mContext = context;
         mInflater = LayoutInflater.from(mContext);
         mlists = lists;
-        
+
     }
 
     public void refreshData(List<String> lists) {
@@ -40,26 +39,26 @@ public class MyListViewAdapter extends BaseAdapter {
     public int getCount() {
         return mlists.size();
     }
-    
-    @Override
-	public Object getItem(int position) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public long getItemId(int position) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-   
+    @Override
+    public Object getItem(int position) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-    	Log.v("wang", "getView:"+position);
-    	ViewHolder viewHolder;
+        Log.v("wang", "getView:" + position);
+        ViewHolder viewHolder;
         if (convertView == null) {
-        	viewHolder = new ViewHolder();
+            viewHolder = new ViewHolder();
             convertView = mInflater.inflate(R.layout.item_list, null);
             viewHolder.mTv = (TextView) convertView.findViewById(R.id.list_tv);
             convertView.setTag(viewHolder);
@@ -67,7 +66,7 @@ public class MyListViewAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.mTv.setText(mlists.get(position));
-        
+
         return convertView;
     }
 
@@ -75,6 +74,5 @@ public class MyListViewAdapter extends BaseAdapter {
         private TextView mTv;
     }
 
-	
 
 }
